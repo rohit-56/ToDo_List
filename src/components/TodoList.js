@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
+import "../App.css";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -10,6 +11,7 @@ function TodoList() {
       return;
     }
 
+    //use of spread operator(...) to concatenate new todo in array
     const newTodos = [todo, ...todos];
     setTodos(newTodos);
   };
@@ -40,6 +42,7 @@ function TodoList() {
 
   return (
     <div className="todo-list">
+      <h1>ToDo List</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo
         todos={todos}
