@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { TiEdit } from "react-icons/ti";
 import TodoForm from "./TodoForm";
+import "../App.css";
 
 function Todo(props) {
   const [edit, setEdit] = useState({
@@ -23,7 +24,7 @@ function Todo(props) {
 
   return props.todos.map((todo, index) => (
     <div
-      className={!todo.isComplete ? "todo-row-complete" : "todo-row"}
+      className={todo.isComplete ? "todo-row complete" : "todo-row"}
       key={index}
     >
       <div key={todo.id} onClick={() => props.completeTodo(todo.id)}>
